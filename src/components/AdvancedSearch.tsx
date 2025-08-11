@@ -16,7 +16,7 @@ const AdvancedSearch: React.FC = () => {
   const navigate = useNavigate(); // <- init
 
   useEffect(() => {
-    fetch('http://192.168.1.64:5000/transactions')
+    fetch('https://backend-18yu.onrender.com/transactions')
       .then(res => res.json())
       .then(data => setTransactions(data))
       .catch(err => console.error('Erreur:', err));
@@ -25,7 +25,7 @@ const AdvancedSearch: React.FC = () => {
     const email = localStorage.getItem('userEmail') || 'inconnu';
   
     try {
-      await fetch('http://192.168.1.64:5000/log-action', {
+      await fetch('https://backend-18yu.onrender.com/log-action', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -135,6 +135,7 @@ const AdvancedSearch: React.FC = () => {
 };
 
 export default AdvancedSearch;
+
 
 
 

@@ -49,7 +49,7 @@ const Signup: React.FC = () => {
     setSuccess('');
   
     try {
-      const response = await fetch('http://192.168.1.64:5000/signup', {  // port corrigé ici
+      const response = await fetch('https://backend-18yu.onrender.com/signup', {  // port corrigé ici
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -198,6 +198,7 @@ const Signup: React.FC = () => {
     );
   };
 export default Signup;
+
 
 
 

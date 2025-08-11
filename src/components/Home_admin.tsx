@@ -41,7 +41,7 @@ const Home_admin: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get('http://192.168.1.64:5000/api/stats/daily-activity')
+      .get('https://backend-18yu.onrender.com/api/stats/daily-activity')
       .then(res => {
         const donneesTraduites = res.data.map((item: { day: string; actions: number }) => ({
           day: traductionsJours[item.day] || item.day,
@@ -54,7 +54,7 @@ const Home_admin: React.FC = () => {
       });
 
     axios
-      .get('http://192.168.1.64:5000/api/stats/daily-transactions')
+      .get('https://backend-18yu.onrender.com/api/stats/daily-transactions')
       .then(res => {
         const donneesTraduites = res.data.map((item: { day: string; transactions: number }) => ({
           day: traductionsJours[item.day] || item.day,
@@ -67,7 +67,7 @@ const Home_admin: React.FC = () => {
       });
 
     axios
-      .get('http://192.168.1.64:5000/api/stats/transactions-by-type')
+      .get('https://backend-18yu.onrender.com/api/stats/transactions-by-type')
       .then(res => {
         setTransactionsParType(res.data);
       })
@@ -166,6 +166,7 @@ const Home_admin: React.FC = () => {
 };
 
 export default Home_admin;
+
 
 
 

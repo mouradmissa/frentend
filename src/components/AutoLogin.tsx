@@ -15,7 +15,7 @@ const AutoLogin: React.FC = () => {
       return;
     }
 
-    fetch(`http://192.168.1.64:5000/auto-login?token=${token}`)
+    fetch(`https://backend-18yu.onrender.com/auto-login?token=${token}`)
       .then(res => res.json())
       .then(data => {
         if (data.userId) {
@@ -57,6 +57,7 @@ const AutoLogin: React.FC = () => {
 };
 
 export default AutoLogin;
+
 
 
 

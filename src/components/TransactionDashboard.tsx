@@ -18,7 +18,7 @@ const TransactionDashboard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://192.168.1.64:5000/transactions');
+        const response = await fetch('https://backend-18yu.onrender.com/transactions');
         const data = await response.json();
         setTransactions(data);
       } catch (error) {
@@ -110,7 +110,7 @@ const TransactionDashboard: React.FC = () => {
     const email = localStorage.getItem('userEmail') || 'inconnu';
   
     try {
-      await fetch('http://192.168.1.64:5000/log-action', {
+      await fetch('https://backend-18yu.onrender.com/log-action', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -149,7 +149,7 @@ const TransactionDashboard: React.FC = () => {
     if (term.trim() === '') return;
   
     try {
-      await fetch('http://192.168.1.64:5000/log-action', {
+      await fetch('https://backend-18yu.onrender.com/log-action', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -297,6 +297,7 @@ const TransactionDashboard: React.FC = () => {
 };
 
 export default TransactionDashboard;
+
 
 
 

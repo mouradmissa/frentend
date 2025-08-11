@@ -18,7 +18,7 @@ const ActionsDuJour: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`http://192.168.1.64:5000/api/logs/day/${jour}`)
+    axios.get(`https://backend-18yu.onrender.com/api/logs/day/${jour}`)
       .then(res => {
         setActions(res.data);
         setLoading(false);
@@ -65,6 +65,7 @@ const ActionsDuJour: React.FC = () => {
 };
 
 export default ActionsDuJour;
+
 
 
 

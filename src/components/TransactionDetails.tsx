@@ -21,7 +21,7 @@ const TransactionDetails: React.FC = () => {
 
     const fetchTransaction = async () => {
       try {
-        const response = await fetch(`http://192.168.1.64:5000/transactions/${transactionId}`);
+        const response = await fetch(`https://backend-18yu.onrender.com/transactions/${transactionId}`);
         if (!response.ok) {
           throw new Error('Transaction non trouvée');
         }
@@ -207,6 +207,7 @@ const TransactionDetails: React.FC = () => {
 };
 
 export default TransactionDetails;
+
 
 
 

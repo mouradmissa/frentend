@@ -18,7 +18,7 @@ const TransactionDashboard_admin: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://192.168.1.64:5000/transactions');
+        const response = await fetch('https://backend-18yu.onrender.com/transactions');
         const data = await response.json();
         setTransactions(data);
       } catch (error) {
@@ -257,6 +257,7 @@ const TransactionDashboard_admin: React.FC = () => {
 };
 
 export default TransactionDashboard_admin;
+
 
 
 

@@ -23,7 +23,7 @@ const HistoriqueActivite: React.FC = () => {
   useEffect(() => {
     if (!email) return;
 
-    fetch(`http://192.168.1.64:5000/api/user-logs/${encodeURIComponent(email)}`)
+    fetch(`https://backend-18yu.onrender.com/api/user-logs/${encodeURIComponent(email)}`)
       .then(res => {
         if (!res.ok) throw new Error('Erreur lors du chargement des logs');
         return res.json();
@@ -80,6 +80,7 @@ const HistoriqueActivite: React.FC = () => {
 };
 
 export default HistoriqueActivite;
+
 
 
 

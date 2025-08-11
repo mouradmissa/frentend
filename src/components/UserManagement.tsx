@@ -24,7 +24,7 @@ const UserManagement: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://192.168.1.64:5000/api/users');
+      const res = await fetch('https://backend-18yu.onrender.com/api/users');
       if (!res.ok) throw new Error('Erreur chargement utilisateurs');
       const data: User[] = await res.json();
       setUsers(data);
@@ -37,7 +37,7 @@ const UserManagement: React.FC = () => {
 
   const handleRoleChange = async (userId: number, newRole: string) => {
     try {
-      const res = await fetch(`http://192.168.1.64:5000/api/users/${userId}/role`, {
+      const res = await fetch(`https://backend-18yu.onrender.com/api/users/${userId}/role`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role: newRole }),
@@ -53,7 +53,7 @@ const UserManagement: React.FC = () => {
   const toggleBlockStatus = async (userId: number, currentStatus: number) => {
     try {
       const newStatus = currentStatus === 1 ? 0 : 1;
-      const res = await fetch(`http://192.168.1.64:5000/api/users/${userId}/block`, {
+      const res = await fetch(`https://backend-18yu.onrender.com/api/users/${userId}/block`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ isBlocked: newStatus }),
@@ -135,6 +135,7 @@ const UserManagement: React.FC = () => {
 };
 
 export default UserManagement;
+
 
 
 

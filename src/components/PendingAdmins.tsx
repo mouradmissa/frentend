@@ -22,7 +22,7 @@ const PendingAdmins: React.FC = () => {
 
   const fetchPendingAdmins = async () => {
     try {
-      const res = await fetch('http://192.168.1.64:5000/api/admins/pending');
+      const res = await fetch('https://backend-18yu.onrender.com/api/admins/pending');
       if (!res.ok) throw new Error('Erreur chargement admins en attente');
       const data: Admin[] = await res.json();
       setAdmins(data);
@@ -35,7 +35,7 @@ const PendingAdmins: React.FC = () => {
 
   const handleValidate = async (id: number) => {
     try {
-      const res = await fetch(`http://192.168.1.64:5000/api/admins/${id}/validate`, {
+      const res = await fetch(`https://backend-18yu.onrender.com/api/admins/${id}/validate`, {
         method: 'PATCH',
       });
       if (!res.ok) throw new Error('Erreur validation admin');
@@ -95,6 +95,7 @@ const PendingAdmins: React.FC = () => {
 };
 
 export default PendingAdmins;
+
 
 
 

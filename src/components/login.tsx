@@ -26,7 +26,7 @@ useEffect(() => {
   const token = params.get('token');
 
   if (token) {
-    fetch(`http://192.168.1.64:5000/login/autologin?token=${token}`)
+    fetch(`https://backend-18yu.onrender.com/login/autologin?token=${token}`)
     .then(res => res.json())
       .then(data => {
         if (data.userId) {
@@ -59,7 +59,7 @@ useEffect(() => {
     setSuccess('');
 
     try {
-      const response = await fetch('http://192.168.1.64:5000/login', {
+      const response = await fetch('https://backend-18yu.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -176,6 +176,7 @@ useEffect(() => {
 };
 
 export default Login;
+
 
 
 
