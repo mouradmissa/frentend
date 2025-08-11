@@ -1,0 +1,217 @@
+:root {
+    --ooredoo-red: #E30613;
+    --ooredoo-dark-red: #C00511;
+    --ooredoo-white: #ffffff;
+    --ooredoo-black: #1A1A1A;
+    --ooredoo-grey: #f0f0f0;
+  
+    --text-lg: 1.3rem;
+    --text-md: 1.1rem;
+    --text-sm: 0.95rem;
+  }
+  
+  /* ================================
+     FOOTER GLOBAL
+  ================================ */
+  .footer-ooredoo {
+    background-color: var(--ooredoo-black);
+    color: var(--ooredoo-white);
+    padding: 3rem 2rem 1.5rem;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+  }
+  
+  /* ================================
+     CONTAINER FLEX
+  ================================ */
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  /* ================================
+     BRANDING SECTION
+  ================================ */
+  .footer-brand {
+    flex: 1 1 300px;
+  }
+  
+  .footer-logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-brand p {
+    font-size: var(--text-md);
+    line-height: 1.6;
+    color: #dddddd;
+  }
+  
+  /* ================================
+     LINKS SECTION
+  ================================ */
+  .footer-links {
+    flex: 1 1 200px;
+  }
+  
+  .footer-links h4 {
+    color: var(--ooredoo-red);
+    font-size: var(--text-lg);
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-links a {
+    color: var(--ooredoo-white);
+    text-decoration: none;
+    font-size: var(--text-md);
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--ooredoo-red);
+  }
+  
+  /* ================================
+     CONTACT SECTION
+  ================================ */
+  .footer-contact {
+    flex: 1 1 300px;
+  }
+  
+  .footer-contact h4 {
+    color: var(--ooredoo-red);
+    font-size: var(--text-lg);
+    margin-bottom: 1rem;
+  }
+  
+  .footer-contact p {
+    font-size: var(--text-md);
+    margin-bottom: 0.6rem;
+    color: #cccccc;
+  }
+  
+  /* ================================
+     SOCIAL ICONS
+  ================================ */
+  .footer-socials {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-socials a {
+    font-size: 1.4rem;
+    color: var(--ooredoo-white);
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .footer-socials a:hover {
+    color: var(--ooredoo-red);
+  }
+  
+  /* ================================
+     CUSTOM ICONS (BOUTIQUE, LOCATION...)
+  ================================ */
+  .footer-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-icons img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-icons img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* ================================
+     FOOTER BOTTOM
+  ================================ */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
+    font-size: var(--text-sm);
+    color: #bbbbbb;
+  }
+  .brand-icon-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .brand-icon {
+    width: 100px;     /* Avant : 40px */
+    height: 1O0px;    /* Avant : 40px */
+    object-fit: contain;
+  }
+  
+  .footer-logo {
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.8rem;
+    font-size: var(--text-md);
+    color: #cccccc;
+  }
+  
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  /* ================================
+     RESPONSIVE DESIGN
+  ================================ */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+      flex: 1 1 100%;
+    }
+  
+    .footer-icons {
+      justify-content: center;
+    }
+  
+    .footer-socials {
+      justify-content: center;
+    }
+  }
+  

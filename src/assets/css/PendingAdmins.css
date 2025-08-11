@@ -1,0 +1,150 @@
+:root {
+    --ooredoo-red: #e60000;
+    --dark: #111;
+    --light: #fafafa;
+    --white: #fff;
+    --gray: #6c757d;
+    --green: #28a745;
+    --green-hover: #218838;
+    --border: #e0e0e0;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pending-admins-container {
+    background-color: var(--light);
+    min-height: 100vh;
+    padding: 100px 5%;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .title {
+    font-size: 32px;
+    text-align: center;
+    color: var(--ooredoo-red);
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--ooredoo-red);
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  .admins-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .admins-table th,
+  .admins-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--dark);
+  }
+  
+  .admins-table th {
+    background-color: var(--ooredoo-red);
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+  
+  .admins-table tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.2s ease;
+  }
+  
+  .validate-btn {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .validate-btn:hover {
+    background-color: var(--green-hover);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .info,
+  .error {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .info {
+    color: var(--gray);
+  }
+  
+  .error {
+    color: var(--ooredoo-red);
+    font-weight: bold;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    .admins-table thead {
+      display: none;
+    }
+  
+    .admins-table,
+    .admins-table tbody,
+    .admins-table tr,
+    .admins-table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .admins-table tr {
+      margin-bottom: 15px;
+      background-color: var(--white);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 10px;
+    }
+  
+    .admins-table td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+      font-size: 14px;
+    }
+  
+    .admins-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      width: 45%;
+      padding-right: 10px;
+      font-weight: bold;
+      color: var(--gray);
+      text-align: left;
+    }
+  }
+  
+  /* Smooth fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

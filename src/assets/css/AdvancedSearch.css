@@ -1,0 +1,124 @@
+.advanced-search-page {
+  background-color: #fefefe;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.advanced-search-container {
+  margin: 60px auto 0; /* <-- marge supérieure augmentée */
+  /* le reste inchangé */
+  max-width: 1100px;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+.advanced-search-container h2 {
+  color: #e60000;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.search-form input,
+.search-form select {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1 1 200px;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  border-color: #e60000;
+  outline: none;
+}
+
+.search-form button {
+  background-color: #e60000;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #cc0000;
+}
+
+.results table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+.results th,
+.results td {
+  padding: 14px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.results th {
+  background-color: #e60000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.results tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.results tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s;
+}
+
+.results td {
+  color: #333;
+}
+.search-form select {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 12px 40px 12px 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  position: relative;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%23e60000%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  transition: border-color 0.3s ease;
+}
+
+.search-form select:focus {
+  border-color: #e60000;
+  outline: none;
+}
+
+.search-form option {
+  font-size: 1rem;
+}

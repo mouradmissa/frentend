@@ -1,0 +1,134 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mon-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: Payment_gateway_transaction
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysqlversion: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mon-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: payment_gateway_transaction
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  openldap:
+    image: osixia/openldap:1.5.0
+    container_name: openldap-service
+    environment:
+      LDAP_ORGANISATION: "Example Corp"
+      LDAP_DOMAIN: "example.com"
+      LDAP_ADMIN_PASSWORD: adminpassword
+      LDAP_URL: ldap://openldap:389
+
+    ports:
+      - "389:389"
+      - "636:636"
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend
+    container_name: mon-backend
+    environment:
+      DB_HOST: mysql
+      DB_USER: user
+      DB_PASSWORD: userpass
+      DB_NAME: Payment_gateway_transaction
+      
+      LDAP_URL: ldap://openldap:389
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+      - openldap
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frentend
+    container_name: mon-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+
+    networks:
+      - app-network
+
+  openldap:
+    image: osixia/openldap:1.5.0
+    container_name: openldap-service
+    environment:
+      LDAP_ORGANISATION: "Example Corp"
+      LDAP_DOMAIN: "example.com"
+      LDAP_ADMIN_PASSWORD: admin
+      LDAP_URL: ldap://openldap:389
+
+    ports:
+      - "389:389"
+      - "636:636"
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend
+    container_name: mon-backend
+    environment:
+      DB_HOST: mysql
+      DB_USER: user
+      DB_PASSWORD: userpass
+      DB_NAME: payment_gateway_transaction
+      
+      LDAP_URL: ldap://openldap:389
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+      - openldap
+    networks:
+      - app-network
+
+  frontend:
+    build: .
+    container_name: mon-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:

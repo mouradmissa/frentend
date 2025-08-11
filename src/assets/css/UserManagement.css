@@ -1,0 +1,232 @@
+:root {
+  --ooredoo-red: #e60000;
+  --dark: #111;
+  --light: #fafafa;
+  --white: #fff;
+  --gray: #6c757d;
+  --green: #28a745;
+  --green-hover: #218838;
+  --border: #e0e0e0;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.user-management-container {
+  background-color: var(--light);
+  min-height: 100vh;
+  padding: 100px 5%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.user-management-container h2 {
+  font-size: 32px;
+  text-align: center;
+  color: var(--ooredoo-red);
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 3px solid var(--ooredoo-red);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.loading {
+  color: var(--gray);
+}
+
+.error {
+  color: var(--ooredoo-red);
+  font-weight: bold;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.user-table th,
+.user-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  color: var(--dark);
+}
+
+.user-table th {
+  background-color: var(--ooredoo-red);
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.user-table tbody tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.2s ease;
+}
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* réduit l’espace à 6px */
+  font-size: 32px;
+  color: var(--ooredoo-red);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.title-with-icon .icon {
+  width: 40px;   /* taille de l'icône */
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Role select */
+select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--ooredoo-red);
+  background-color: var(--white);
+  color: var(--ooredoo-red);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  background-color: var(--ooredoo-red);
+  color: var(--white);
+}
+
+/* Buttons */
+.block-button,
+.unblock-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.block-button {
+  background-color: var(--ooredoo-red);
+  color: var(--white);
+}
+
+.unblock-button {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.block-button:hover,
+.unblock-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 40px; /* Plus d’espace sous le bouton */
+}
+
+.go-to-pending-btn {
+  padding: 10px 15px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.go-to-pending-btn:hover {
+  background-color: #877f7fcd;
+  transform: translateY(-1px);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .user-table thead {
+    display: none;
+  }
+
+  .user-table,
+  .user-table tbody,
+  .user-table tr,
+  .user-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .user-table tr {
+    margin-bottom: 15px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  .user-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    font-size: 14px;
+  }
+
+  .user-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 16px;
+    width: 45%;
+    font-weight: bold;
+    color: var(--gray);
+    text-align: left;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.history-button {
+  padding: 10px 14px;
+  background-color: var(--ooredoo-red);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.history-button:hover {
+  background-color: #c70000;
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
